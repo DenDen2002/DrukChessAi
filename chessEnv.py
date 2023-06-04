@@ -78,6 +78,58 @@ class ChessEnv:
         return r.astype(bool)
 
     @staticmethod
+    def input_to_state(input_state: np.ndarray) -> str:
+        """
+        Convert tensor representation back to FEN notation
+        """
+        # Extract the components from the input state
+        is_white_turn = input_state[:, :, 0]
+        castling = input_state[:, :, 1:5]
+        counter = input_state[:, :, 5]
+        piece_arrays = input_state[:, :, 6:132]
+        en_passant = input_state[:, :, 132]
+        # Create an empty chess board
+        board = chess.Board()
+
+        # Set the player's turn
+        board.turn = bool(is_white_turn[0, 0])
+
+        # Set the castling rights
+        for i in range(2):
+            if np.any(castling[i]):
+                board.set_castling_fen(
+                    chess.WHITE if i == 0 else chess.BLACK, 'KQ')
+        for i in range(2, 4):
+            if np.any(castling[i]):
+                board.set_castling_fen(
+                    chess.WHITE if i == 2 else chess.BLACK, 'kq')
+
+        # Set the repetition counter
+        board.halfmove_clock = 50 if np.any(counter) else 0
+
+        # Set the piece positions
+        for color in chess.COLORS:
+            for piece_type in chess.PIECE_TYPES:
+                piece_indices = np.argwhere(
+                    piece_arrays[(6 * color) + piece_type])
+                for index in piece_indices:
+                    row = 7 - index[0]
+                    col = index[1]
+                    square = chess.square(col, row)
+                    piece = chess.Piece(piece_type, color)
+                    board.set_piece_at(square, piece)
+
+        # Set the en passant square
+        en_passant_indices = np.argwhere(en_passant)
+        if len(en_passant_indices) > 0:
+            row = 7 - en_passant_indices[0][0]
+            col = en_passant_indices[0][1]
+            square = chess.square(col, row)
+            board.ep_square = square
+
+        return board.fen()
+
+    @staticmethod
     def estimate_winner(board: chess.Board) -> int:
         """
         Estimate the winner of the current node.

@@ -157,7 +157,7 @@ if __name__ == "__main__":
 
     from agent import Agent
     agent = Agent(local_predictions=True,
-                  model_path="models/model-2022-04-13_19:39:50.h5", state=board.fen())
+                  model_path="models/model.h5", state=board.fen())
 
     input_state = ChessEnv.state_to_input(board.fen())
     p, v = agent.predict(input_state)

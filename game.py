@@ -241,7 +241,6 @@ class Game:
         puzzles: pd.DataFrame = pd.read_csv(
             filename, encoding="ascii", header=None)
         # drop unnecessary columns
-        print(puzzles.columns)
         puzzles = puzzles.drop(columns=[0, 1, 5, 6, 7, 9, 10])
         # set column names
         puzzles.columns = ["fen", "moves", "rating", "type"]

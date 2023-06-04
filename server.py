@@ -40,7 +40,7 @@ class ServerSocket:
         # first prediction
         test_data = np.random.choice(
             a=[False, True], size=(1, *config.INPUT_SHAPE), p=[0, 1])
-        tf.convert_to_tensor(test_data, dtype=tf.bool)
+        test_data = tf.convert_to_tensor(test_data, dtype=tf.bool)
         p, v = predict(test_data)
         del test_data, p, v
 

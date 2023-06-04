@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+*,*::before,*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins',sans-serif;
+}
+
+::selection{
+    background-color: #0b372dbb;
+}
+
+.logo{
+    width: 100px;
+    box-shadow: 0 0 10px 5px white;
+    border-radius: 55%;
+}
+
+header{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+header nav{
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+header ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+header ul a{
+    text-decoration: none;
+    color: white;
+    padding: 0 1.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.83rem;
+    cursor: default;
+} 
+
+.hamburger{
+    padding-left: 1.5rem;
+}
+.hamburger > a{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    background-color: rgba(115,115,115,0.7);
+}
+
+.hamburger > a .bar{
+    position: relative;
+    width: 52%;
+    height: 1.3px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+.hamburger > a .bar::before, .hamburger > a .bar::after{
+    content:"";
+    position: absolute;
+    left: 50%;
+    width: 60%;
+    height: 100%;
+    background-color: inherit;
+    border-radius: 2px;
+}
+
+.hamburger > a .bar::before{
+    left: 4px;
+    top: -4.5px;
+}
+
+.hamburger > a .bar::after{
+    left: 4px;
+    top: 4.5px;
+}
+
+main{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.parallax{
+    pointer-events: none;
+    transition: 0.45s cubic-bezier(0.2,0.49,0.32,0.99);
+}
+
+.bg-img{
+    position: absolute;
+    width: 195.963541667%;
+    top: calc(50% - 42.824074074%);
+    left: calc(50% - 0.651041666%);
+    z-index: 1;
+}
+.fog-7{
+    position: absolute;
+    z-index: 2;
+    width: 123.697916667%;
+    top: calc(50% - 5.787037037%);
+    left: calc(50% + 13.020833333%);
+}
+.mountain-10{
+    position: absolute;
+    z-index: 3;
+    width: 58.072916666%;
+    top: calc(50% + 11.574074074%);
+    left: calc(50% + 14.973958333%);
+}
+.fog-6{
+    position: absolute;
+    z-index: 4;
+    width: 104.817708333%;
+    top: calc(50% + 25.462962963%);
+    left: calc(50% + 3.255208333%);
+}
+.mountain-9{
+    position: absolute;
+    z-index: 5;
+    width:30.598958333%;
+    top: calc(50% + 18.518518518%);
+    left: calc(50% - 33.854166666%);
+}
+.mountain-8{
+    position: absolute;
+    z-index: 6;
+    width: 57.291666666%;
+    top: calc(50% + 17.361111111%);
+    left: calc(50% - 16.927083333%);
+}
+.fog-5{
+    position: absolute;
+    z-index: 7;
+    width: 29.296875%;
+    top: calc(50% - 9.259259259%);
+    left: calc(50% + 3.255208333%);
+}
+.mountain-7{
+    position: absolute;
+    z-index:8;
+    width: 70%;
+    top: calc(50% + 21.99074074%);
+    left: calc(50% + 19.53125%);
+}
+.text{
+    position: absolute;
+    z-index: 9;
+    top: calc(50% - 6.944444444%);
+    left: calc(50%);
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    pointer-events: auto;
+} 
+ .text h2{
+    font-weight: 100;
+    font-size: 4rem;
+    line-height: 0.88;
+}
+.text h1{
+    font-weight: 800;
+    font-size: 5rem;
+    line-height: 0.88;
+}
+
+.mountain-6{
+    position: absolute;
+    z-index: 10;
+    top: calc(50% + 9.259259259%);
+    left: calc(50% + 42.317708333%);
+    width: 26.5625%;
+}
+.fog-4{
+    position: absolute;
+    z-index: 11;
+    top: calc(50% + 23.148148148%);
+    left: calc(50% - 5.208333333%);
+    width: 39.0625%;
+}
+.mountain-5{
+    position: absolute;
+    z-index: 12;
+    top: calc(50% + 25%);
+    left: calc(50% + 5.463541666%);
+    width: 100%;
+}
+.fog-3{
+    position: absolute;
+    z-index: 13;
+    top: calc(50% + 12.731481481%);
+    left: calc(50% - 0.9765625%);
+    width: 104.166666667%;
+}
+.mountain-4{
+    position: absolute;
+    z-index: 14;
+    top: calc(50% + 10%);
+    left: calc(50% - 40%);
+    width: 90%;
+}
+.mountain-3{
+    position: absolute;
+    z-index: 15;
+    top: calc(50% + 46.296296296%);
+    left: calc(50% + 42.96875%);
+    width: 31.25%;
+}
+.fog-2{
+    position: absolute;
+    z-index: 16;
+    top: calc(50% + 34.722222222%);
+    left: calc(50% + 32.552083333%);
+    width: 65.104166666%;
+}
+.mountain-2{
+    position: absolute;
+    z-index: 17;
+    top: calc(50% + 25.833333333%);
+    left: calc(50% + 26.947916666%);
+    width: 100%;
+}
+.mountain-1{
+    position: absolute;
+    z-index: 18;
+    top: calc(50% + 11.574074074%);
+    left: calc(50% - 42.96875%);
+    width: 39.0625%;
+}
+.sun-rays{
+    position: absolute;
+    z-index: 19;
+    top: calc(0%);
+    left: calc(0% + 63%);
+    width: 38.736979166%;
+    pointer-events: none;
+}
+.black-shadow{
+    position: absolute;
+    pointer-events: none;
+    z-index: 20;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+.fog-1{
+    position: absolute;
+    z-index: 21;
+    top: calc(170% - 41.087962963%);
+    left: 50%;
+    width: 123.697916667%;
+}
+.vignette{
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0) 65%,rgba(0,0,0,07));
+}
+
+@media (max-width: 1100px){
+    .text h1{
+        font-size: 3rem;
+    }
+    .text h2{
+        font-size: 2rem;
+    }
+}
+@media (max-width: 725px){
+    .text h1{
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+    .text h2{
+        font-size: 1rem;
+        line-height: 1.1;
+    }
+    header nav{
+        padding: 0 0.5rem;
+    }
+    .logo{
+        width: 75px;
+    }
+    header ul a{
+        font-size: 0.73rem;
+        padding: 0 0.5rem;
+    }
+    .search a{
+        font-size: 0.85rem;
+        padding: 0 1.8rem;
+    }
+    .hamburger{
+        padding: 0.9rem;
+    }
+    .hamburger a{
+        height: 30px;
+        width: 30px;
+    }
+
+}
+@media (max-width: 520){
+    .text h1{
+        font-size: 1.6rem;
+    }
+    .text h2{
+        font-size: 0.8rem;
+    }
+}

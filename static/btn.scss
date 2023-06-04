@@ -1,0 +1,51 @@
+:root {
+  --white: #fff;
+  --black: #111;
+  --pink: #e701dd;
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  position: absolute;
+  top: calc(80%);
+  left: calc(42.5%);
+  z-index: 998;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+}
+
+/////////// Everything above this line is boilerplate CSS
+
+.link {
+  font-family: "Inter";
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+
+  position: relative;
+  // border: 1px solid red;
+
+  span,
+  i {
+    position: relative;
+  }
+
+  i {
+    margin-left: 0.5em;
+  }
+
+  .pink {
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
+    background-color: var(--black);
+
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    left: -0.65em;
+  }
+}

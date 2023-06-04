@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta name="title" content="Druk ChessAi Technology Used">
+      <meta name="description"
+          content="ChessAi: web development projects, web design, and game creations. Discover the blend of technical skills and creativity at work.">
+      <meta name="keywords"
+          content="Druk Chess AI, Technology USed, web development, web design, Machine Learning, projects, creativity, technical skills, web applications, webdev, programming, chess,Deep Learning">
+      <meta name="robots" content="index, follow">
+      <meta charset="UTF-8">
+      <meta name="author" content="Druk Chess">
+  
+      <meta property="og:description"
+          content="Druk Chess Ai: The next generation ChessAI, Grow as you play. Discover the blend of technical skills and creativity at work.">
+      <meta property="og:type" content="website">
+        
+        <title>GameBoard</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        
+        <script type="text/javascript" src="{{ url_for('static',filename='bootstrap.js') }}"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></link>
+        <link rel="stylesheet" href="{{ url_for('static', filename='libs/chessboard/css/chessboard-0.3.0.css') }}"></link>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"></script>
+        <script type="text/javascript"> $SCRIPT_ROOT = {{ request.script_root|tojson|safe }} </script>
+        <script type="text/javascript" src="{{ url_for('static',filename='libs/chessboard/js/chessboard-0.3.0.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static',filename='libs/chessboard/js/chessboard-0.3.0.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static',filename='scripts.js') }}"></script>
+            <link rel="stylesheet" href="../static/style.css">
+    </head>
+    <body>
+      <nav class="nav">
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="../static/libs/modelimg/bigLogo.png" alt="" style="height: 80px;"></a>
+            </div>
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+                    <li><a href="contact">Contact Us</a></li>
+                    <li><a href="modeling">Modeling</a></li>
+                    <li><a href="menu">Menu</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        <div class="container" >
+          
+            <div class="row "style="justify-content: center; align-items:center">
+                <div class="col-xs-12 col-sm-6" style="justify-content: center; padding-left: 5%" >
+                    <div id="mainWindow" >
+                        <div id="piecesB"></div>
+                        <div id="board"></div>
+                        <div id="piecesW"></div>
+                    </div>
+                </div>
+                <div class="dmCon col-sm-2" id="tableContainer">
+                    <table id="pgn" style="justify-content: center;">
+                      <tr>
+                        <th>Move Number</th>
+                        <th>White Move</th>
+                        <th>Black Move</th>
+                      </tr>
+                    </table>
+                  </div>
+            </div>
+            <div class="row"style="justify-content:center">
+              <div class="restart g-col-6 col-sm-12" id="restartBtn" >
+                        
+                <button onclick="newGame() ">Restart</button>
+    
+              </div>
+              <div class="Exist g-col-6 col-sm-12" >
+                    
+                <button onclick="exitGame()">Exit Game</button>
+    
+              </div>
+          </div>
+        </div>
+    </body>
+</html>

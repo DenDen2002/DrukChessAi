@@ -46,6 +46,3 @@ def get_move(depth, fen):
     prediction = engine.get_move()
     return prediction
 
-
-if __name__ == "__main__":
-    app.run()

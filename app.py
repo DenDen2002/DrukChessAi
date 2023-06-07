@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from chess_engine import *
 
 app = Flask(__name__)
-
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 @app.route("/contact")
 def contact():

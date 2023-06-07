@@ -1,6 +1,6 @@
 from flask import Flask, render_template
 from chess_engine import *
-
+from flask_cors import CORS
 app = Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 

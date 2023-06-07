@@ -21,7 +21,7 @@
     <script type="text/javascript" src="{{ url_for('static',filename='scripts.js') }}"></script>
     <style>
         body {
-            padding-top: 40px;
+            
             background-color: #312e2b;
             font-family: "Quicksand", sans-serif;
         }
@@ -63,6 +63,8 @@
                     <li><a href="contact">Contact Us</a></li>
                     <li><a href="modeling">Modeling</a></li>
                     <li><a href="menu">Menu</a></li>
+                    <li><a href="technology">Technology</a></li>
+
                   
                 </ul>
             </div>
@@ -75,12 +77,15 @@
     </nav>
     <div class="container1 ">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12 ">
                 <img src="../static/libs/modelimg/bigLogo.png" alt="Logo">
             </div>
 
             <div class="col-sm-12" >
                 <button class="btn" id="menbtn"onclick="window.location.href='game'">AI vs Human</button>
+            </div>
+            <div class="col-sm-12 mt-4" >
+                <button class="btn" id="menbtn"onclick="window.location.href='selfgame'">AI vs AI</button>
             </div>
         </div>
 

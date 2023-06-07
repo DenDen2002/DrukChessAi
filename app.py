@@ -19,6 +19,11 @@ def game():
     return render_template("game.html")
 
 
+@app.route("/selfgame")
+def selfgame():
+    return render_template("selfgame.html")
+
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -27,6 +32,11 @@ def index():
 @app.route("/modeling")
 def modeling():
     return render_template("modeling.html")
+
+
+@app.route("/technology")
+def tech():
+    return render_template("technology.html")
 
 
 # got the idea from https://github.com/brokenloop/FlaskChess/blob/master/flask_app.py
@@ -38,4 +48,4 @@ def get_move(depth, fen):
 
 
 if __name__ == "__main__":
-    app.run(debug=False, host='0.0.0.0')
+    app.run(debug=True)

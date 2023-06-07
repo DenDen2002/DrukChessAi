@@ -49,9 +49,9 @@ class Engine:
         black_legal_moves = self.board.legal_moves
         current_fen_x = self.board.fen()
         black_response = {}
-        print("Predicting\n")
+        print("calculating\n")
         for black_move in black_legal_moves:
-            print(". ", end="")
+            print(".")
             white_response = {}
             self.board.push(black_move)
             if self.board.is_checkmate():

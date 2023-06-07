@@ -3,7 +3,7 @@ import numpy as np
 import tensorflow as tf
 from util import *
 import os
-model_path = os.path.join(os.path.dirname(_file_), 'model.tflite')
+model_path = os.path.join(os.path.dirname(__file__), 'model.tflite')
 # load model
 interpreter = tf.lite.Interpreter(model_path=model_path)
 interpreter.allocate_tensors()

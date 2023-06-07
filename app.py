@@ -48,4 +48,4 @@ def get_move(depth, fen):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

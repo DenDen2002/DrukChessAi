@@ -3,3 +3,4 @@ tensorflow
 python-chess
 flask
 numpy
+flask-cors

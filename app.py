@@ -1,8 +1,8 @@
 from flask import Flask, render_template
 from chess_engine import *
-from flask_cors import CORS
+
 app = Flask(__name__)
-cors = CORS(app, resources={r"/*": {"origins": "*"}})
+
 
 @app.route("/contact")
 def contact():
@@ -46,3 +46,6 @@ def get_move(depth, fen):
     prediction = engine.get_move()
     return prediction
 
+
+if __name__ == "__main__":
+    app.run(debug=True)

@@ -2,10 +2,9 @@ import chess
 import numpy as np
 import tensorflow as tf
 from util import *
-import os
-model_path = os.path.join(os.path.dirname(__file__), 'model.tflite')
+
 # load model
-interpreter = tf.lite.Interpreter(model_path=model_path)
+interpreter = tf.lite.Interpreter(model_path="model.tflite")
 interpreter.allocate_tensors()
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()

@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,700");
+
 body {
   padding-top: 0px;
   align-items: center;
   background-color: #312e2b;
   font-family: "Quicksand", sans-serif;
 }
+
 .nav {
   width: 100%;
   line-height: 65px;
@@ -61,6 +63,7 @@ body {
   font-size: 28px;
   transition: 500ms;
 }
+
 #board {
   padding: 10px;
   max-width: 500px;
@@ -83,6 +86,7 @@ body {
   position: absolute;
   bottom: 0;
 }
+
 .sidC {
   display: flex;
   height: 100vh;
@@ -103,40 +107,68 @@ body {
 
 .restart,
 .Exist {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 50px;
 }
-.restart {
-  margin-top: 10px; /* adjust to your desired spacing */
-}
+
 .restart button {
-  background-color: rgb(33, 32, 30);
-  color: #fff;
-  border-radius: 2px;
-  box-shadow: none;
+  background-color: transparent;
+  color: #fafafa;
+  border: 1px solid #fafafa;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
-.restart button:hover {
+
+/* .restart button:hover {
   transform: scale(1.5);
   transition: 200ms;
-}
-.Exist {
-  margin-bottom: 10px; /* adjust to your desired spacing */
-}
+} */
+
 .Exist button {
-  background-color: rgb(33, 32, 30);
-  color: #fff;
-  border-radius: 2px;
-  box-shadow: none;
+  background-color: transparent;
+  color: #fafafa;
+  border: 1px solid #fafafa;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
+
+.restart button:hover,
 .Exist button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.restart button:focus,
+.Exist button:focus {
+  outline: none;
+}
+
+.restart button:active,
+.Exist button:active {
+  background-color: #555;
+  color: #fff;
+}
+
+/* .Exist button:hover {
   transform: scale(1.5);
   transition: 200ms;
-}
+} */
 .sideCon h4 {
   color: aliceblue;
 }
+
 .dmoves {
   background-color: azure;
   max-width: 500px;
@@ -147,9 +179,12 @@ body {
 }
 
 .grid {
-  display: flex; /* Change to flex display */
-  justify-content: space-between; /* Adjust alignment as needed */
-  align-items: center; /* Adjust alignment as needed */
+  display: flex;
+  /* Change to flex display */
+  justify-content: space-between;
+  /* Adjust alignment as needed */
+  align-items: center;
+  /* Adjust alignment as needed */
   gap: 3px;
 }
 
@@ -157,6 +192,7 @@ body {
 .Exist {
   padding: 5px;
 }
+
 .dmCon {
   /* background-color: azure; */
   color: black;
@@ -172,6 +208,7 @@ body {
   max-height: 50%;
   display: inline;
 }
+
 /* Table styling */
 #pgn {
   width: 100%;
@@ -196,11 +233,15 @@ body {
 
 /* Table scrolling */
 #tableContainer {
-  max-height: 800px; /* Set the maximum height for the container */
+  max-height: 800px;
+  /* Set the maximum height for the container */
   height: 400px;
-  overflow-y: auto; /* Enable vertical scrolling */
+  width: 200px !important;
+  overflow-y: auto;
+  /* Enable vertical scrolling */
   margin-left: 100px;
 }
+
 /* Fix the position of headers */
 #tableContainer thead th {
   position: sticky;
@@ -213,4 +254,20 @@ body {
   transition: 500ms;
   color: white;
   border: 0px;
+}
+
+.popup {
+  position: fixed;
+  top: 75%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  transition: 500ms;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #312e2b;
+  border: 0px;
+}
+
+#pawn {
+  height: 50px;
 }

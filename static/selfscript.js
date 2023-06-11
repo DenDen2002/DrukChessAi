@@ -10,19 +10,13 @@ var board,
   fenEl = $("#fen"),
   pgnEl = $("#pgn");
 
-// do not pick up pieces if the game is over
-// only pick up pieces for the side to move
 var onDragStart = function (source, piece, position, orientation) {
-  if (game.turn() === "b") {
-    return false;
+  // Only allow picking up pieces if it is White's turn
+  if (game.turn() === "w") {
+    return true; // Allow picking up the piece
   }
-  if (
-    game.game_over() === true ||
-    (game.turn() === "w" && piece.search(/^b/) !== -1) ||
-    (game.turn() === "b" && piece.search(/^w/) !== -1)
-  ) {
-    return false;
-  }
+
+  return false; // Prevent picking up the piece for other turns
 };
 
 var onDrop = function (source, target) {
@@ -62,9 +56,9 @@ var updateStatus = function () {
     // Check if it's a draw
     else if (game.in_draw()) {
       status = "Draw!";
-      displayMessage(status);
+      displayWinner(status);
     }
-    // Handle other game ending scenarios (e.g., stalemate, insufficient material, etc.)
+    // Handle other game-ending scenarios (e.g., stalemate, insufficient material, etc.)
     else {
       status = "Game over";
       displayMessage(status);
@@ -81,6 +75,11 @@ var updateStatus = function () {
       status += ", " + moveColor + " is in check";
       displayMessage(status);
     }
+
+    // Proceed with the computer's move if it's Black's turn
+    if (game.turn() === "b") {
+      getResponseMove();
+    }
   }
 
   statusEl.html(status);
@@ -89,7 +88,7 @@ var updateStatus = function () {
 };
 
 var cfg = {
-  draggable: true,
+  draggable: false,
   position: "start",
   onDragStart: onDragStart,
   onDrop: onDrop,
@@ -152,10 +151,14 @@ var displayWinner = function (message) {
   );
 
   // Create the image element
+
+  if (game.in_draw()) {
+    imagePath = "../static/libs/modelimg/draw.gif";
+  }
   var image = $(
     '<img src="' +
-    imagePath +
-    '" alt="Winner Image" style="width: 40%; height: auto; top:3%">'
+      imagePath +
+      '" alt="Winner Image" style="width: 40%; height: auto; top:3%">'
   );
 
   // Create the message element
@@ -175,19 +178,30 @@ var displayWinner = function (message) {
 };
 
 var getResponseMove = function () {
-  var e = document.getElementById("sel1");
   var depth = 2;
-  fen = game.fen();
+  var fen = game.fen();
+
+  // Make an AJAX request to get AI's response move
   $.get($SCRIPT_ROOT + "/move/" + depth + "/" + fen, function (data) {
-    game.move(data, { sloppy: true });
+    var moves = game.moves();
+    var randomIndex = Math.floor(Math.random() * moves.length);
+    var randomMove = moves[randomIndex];
+    game.move(randomMove, { sloppy: true });
     updateStatus();
     createTable();
     setTimeout(function () {
       board.position(game.fen());
+      if (game.game_over()) {
+        // Handle game over logic here
+        console.log("Game Over");
+      } else {
+        // Call the function recursively for self-play
+        var delay = Math.random() * 1000 + 500; // Random delay between 500ms and 1500ms
+        setTimeout(getResponseMove, delay);
+      }
     }, 100);
   });
 };
-
 setTimeout(function () {
   board = ChessBoard("board", cfg);
 }, 0);
@@ -198,6 +212,48 @@ var setPGN = function () {
   var move = pgn[pgn.length - 1];
 };
 
+var createTable = function () {
+  var pgn = game.pgn().split(" ");
+  var data = [];
+
+  for (var i = 0; i < pgn.length; i += 3) {
+    var index = i / 3;
+    data[index] = {};
+    for (var j = 0; j < 3; j++) {
+      var label = "";
+      if (j === 0) {
+        label = "moveNumber";
+      } else if (j === 1) {
+        label = "whiteMove";
+      } else if (j === 2) {
+        label = "blackMove";
+      }
+      if (pgn.length > i + j) {
+        data[index][label] = pgn[i + j];
+      } else {
+        data[index][label] = "";
+      }
+    }
+  }
+
+  var tableContainer = document.getElementById("tableContainer");
+  var table = document.getElementById("pgn");
+  // Remove existing table rows except for the first row (header)
+  while (table.rows.length > 1) {
+    table.deleteRow(1);
+  }
+
+  for (var i = 0; i < data.length; i++) {
+    var newRow = table.insertRow();
+    // var moveNumberCell = newRow.insertCell();
+    var whiteMoveCell = newRow.insertCell();
+    var blackMoveCell = newRow.insertCell();
+
+    // moveNumberCell.textContent = data[i].moveNumber;
+    whiteMoveCell.textContent = data[i].whiteMove;
+    blackMoveCell.textContent = data[i].blackMove;
+  }
+};
 
 var updateScroll = function () {
   $("#moveTable").scrollTop($("#moveTable")[0].scrollHeight);
@@ -226,6 +282,7 @@ var clearTable = function () {
 var newGame = function () {
   game.reset();
   board.start();
+  getResponseMove();
   clearTable();
   clearMessage();
   updateStatus();
@@ -255,3 +312,5 @@ const restartButton = document.querySelector("#restartBtn");
 function exitGame() {
   window.location.href = "menu";
 }
+
+getResponseMove();

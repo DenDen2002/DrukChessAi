@@ -2,54 +2,45 @@
 <html lang="en">
 
 <head></head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="language" content="English">
-    <meta charset="UTF-8">
-    <meta name="title" content="Druk ChessAi Technology Used">
-    <meta name="description"
-        content="ChessAi: web development projects, web design, and game creations. Discover the blend of technical skills and creativity at work.">
-    <meta name="keywords"
-        content="Druk Chess AI, Technology USed, web development, web design, Machine Learning, projects, creativity, technical skills, web applications, webdev, programming, chess,Deep Learning">
-    <meta name="robots" content="index, follow">
-   
-    <meta name="author" content="Druk Chess">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="English">
+<meta charset="UTF-8">
+<meta name="title" content="Druk ChessAi Technology Used">
+<meta name="description"
+    content="ChessAi: web development projects, web design, and game creations. Discover the blend of technical skills and creativity at work.">
+<meta name="keywords"
+    content="Druk Chess AI, Technology USed, web development, web design, Machine Learning, projects, creativity, technical skills, web applications, webdev, programming, chess,Deep Learning">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Druk Chess">
+<meta property="og:description"
+    content="Druk Chess Ai: The next generation ChessAI, Grow as you play. Discover the blend of technical skills and creativity at work.">
+<meta property="og:type" content="website">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='libs/contactStyles/Contact.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</link>
+<link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+<style type="text/css">
+    .index-module_type__E-SaG::after {
+        content: '|';
+        animation: index-module_cursor__PQg0P 1.1s infinite step-start;
+    }
 
-    <meta property="og:description"
-        content="Druk Chess Ai: The next generation ChessAI, Grow as you play. Discover the blend of technical skills and creativity at work.">
-    <meta property="og:type" content="website">
-    <script type="module" src="../static/contact.js"></script>
-    <script type="text/javascript" src="{{ url_for('static',filename='scripts.js') }}"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        
-        <script type="text/javascript" src="{{ url_for('static',filename='bootstrap.js') }}"></script>
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <link rel="stylesheet" href="../static/libs/contactStyles/Contact.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></link>
-
-    <link rel="icon" type="image/x-icon" href="favico/favicon-32x32.png">
-    <link rel="stylesheet" href="../static/contact.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="../static/style.css">
-    <style type="text/css">
-        .index-module_type__E-SaG::after {
-            content: '|';
-            animation: index-module_cursor__PQg0P 1.1s infinite step-start;
+    @keyframes index-module_cursor__PQg0P {
+        50% {
+            opacity: 0;
         }
-
-        @keyframes index-module_cursor__PQg0P {
-            50% {
-                opacity: 0;
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 
 <body>
 
- 
+
 
     <div id="root">
         <div>
@@ -57,16 +48,17 @@
                 <nav class="nav">
                     <div class="container">
                         <div class="logo">
-                            <a href="#"><img src="../static/libs/modelimg/bigLogo.png" alt="" style="height: 70px;"></a>
+                            <a href="#"><img src="{{ url_for('static', filename='libs/modelimg/bigLogo.png') }}" alt=""
+                                    style="height: 70px;"></a>
                         </div>
                         <div id="mainListDiv" class="main_list">
                             <ul class="navlinks">
                                 <li><a href="contact">Contact Us</a></li>
                                 <li><a href="modeling">Modeling</a></li>
-                                <li><a href="game">Play</a></li>
+                                <li><a href="menu">Play</a></li>
                                 <li><a href="technology">Technology</a></li>
 
-                              
+
                             </ul>
                         </div>
                         <span class="navTrigger">
@@ -77,8 +69,8 @@
                     </div>
                 </nav>
             </header>
-       
-    
+
+
             <div class="Contact">
                 <div class="Contact-Line" style="transform-origin: center top; transform: none;">
                     <div class="Contact-Line-Circle" style="transform: none;"></div>
@@ -180,8 +172,9 @@
             </div>
         </div>
     </div>
-    <script type="module" src="index.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"> </script>
+    <script type="module" src="{{ url_for('static',filename='contact.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='bootstrap.js') }}"></script>
 
 </body>
 

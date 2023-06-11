@@ -12,25 +12,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="English">
     <meta name="author" content="Druk Chess">
-
     <meta property="og:description"
         content="Druk Chess Ai: The next generation ChessAI, Grow as you play. Discover the blend of technical skills and creativity at work.">
     <meta property="og:type" content="website">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        
-        <script type="text/javascript" src="{{ url_for('static',filename='bootstrap.js') }}"></script>
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- 
-
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></link>
-    <meta property="og:image" content="https://i.imgur.com/ZQ2J9Wb.png">
-    <link rel="stylesheet" href="../static/modeling.css">
     <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="../static/libs/modelimg/logo.png">
+    <meta property="og:image" content="https://i.imgur.com/ZQ2J9Wb.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </link>
+    <link rel="stylesheet" href="{{ url_for('static', filename='modeling.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='libs/modelimg/logo.png') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modeling</title>
-    <link rel="stylesheet" href="../static/style.css">
     <style type="text/css">
         .index-module_type__E-SaG::after {
             content: '|';
@@ -50,7 +45,8 @@
         <nav class="nav">
             <div class="container">
                 <div class="logo">
-                    <a href="#"><img src="../static/libs/modelimg/bigLogo.png" alt="" style="height: 80px;"></a>
+                    <a href="#"><img src="{{ url_for('static', filename='libs/modelimg/bigLogo.png') }}" alt=""
+                            style="height: 80px;"></a>
                 </div>
                 <div id="mainListDiv" class="main_list">
                     <ul class="navlinks">
@@ -59,7 +55,7 @@
                         <li><a href="menu">Play</a></li>
                         <li><a href="technology">Technology</a></li>
 
-                      
+
                     </ul>
                 </div>
                 <span class="navTrigger">
@@ -72,7 +68,7 @@
     </header>
     <div id="root">
         <div>
-            
+
 
         </div>
         <div class="Projects">
@@ -92,8 +88,8 @@
                         <div class="Project-Card "
                             style="will-change: transform; transform: perspective(1000px) rotateX(-2.35deg) rotateY(2.1deg) scale3d(1, 1, 1);">
                             <div class="Project-Image" data-tilt>
-                                <div class="Image-Gradient"></div><img class="Project-Image" src="../static/libs/modelimg/alpha go.jpg"
-                                    alt="Alpha Go">
+                                <div class="Image-Gradient"></div><img class="Project-Image"
+                                    src="{{ url_for('static', filename='libs/modelimg/alpha go.jpg') }}" alt="Alpha Go">
                                 <div class="Project-Texts Project-Text-Left">
                                     <div class="Project-Name Name-Short">Alpha Go</div>
                                     <div class="Project-Subtitle">a documentary film directed by Greg Kohs and released
@@ -115,7 +111,8 @@
                         <div class="Project-Card "
                             style="will-change: transform; transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
                             <div class="Project-Image" data-tilt>
-                                <div class="Image-Gradient"></div><img class="Project-Image" src="../static/libs/modelimg/overview.jpg"
+                                <div class="Image-Gradient"></div><img class="Project-Image"
+                                    src="{{ url_for('static', filename='libs/modelimg/overview.jpg') }}"
                                     alt="Art Gallery">
                                 <div class="Project-Texts Project-Text-Right">
                                     <div class="Project-Name Name-Long">Over View</div>
@@ -134,8 +131,8 @@
                         <div class="Project-Card "
                             style="will-change: transform; transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
                             <div class="Project-Image" data-tilt>
-                                <div class="Image-Gradient"></div><img class="Project-Image" src="../static/libs/modelimg/database.svg"
-                                    alt="database">
+                                <div class="Image-Gradient"></div><img class="Project-Image"
+                                    src="{{ url_for('static', filename='libs/modelimg/database.svg') }}" alt="database">
                                 <div class="Project-Texts Project-Text-Left">
                                     <div class="Project-Name Name-Long">Data Generation</div>
                                     <div class="Project-Subtitle">The Preprocessing</div>
@@ -156,7 +153,8 @@
                         <div class="Project-Card "
                             style="will-change: transform; transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
                             <div class="Project-Image" data-tilt>
-                                <div class="Image-Gradient"></div><img class="Project-Image" src="../static/libs/modelimg/architech.png"
+                                <div class="Image-Gradient"></div><img class="Project-Image"
+                                    src="{{ url_for('static', filename='libs/modelimg/architech.png') }}"
                                     alt="architecture">
                                 <div class="Project-Texts Project-Text-Right">
                                     <div class="Project-Name Name-Short">Neural Network</div>
@@ -178,8 +176,8 @@
                         <div class="Project-Card "
                             style="will-change: transform; transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
                             <div class="Project-Image" data-tilt>
-                                <div class="Image-Gradient"></div><img class="Project-Image" src="../static/libs/modelimg/loss.png"
-                                    alt="Loss Graph">
+                                <div class="Image-Gradient"></div><img class="Project-Image"
+                                    src="{{ url_for('static', filename='libs/modelimg/loss.png') }}" alt="Loss Graph">
                                 <div class="Project-Texts Project-Text-Left">
                                     <div class="Project-Name Name-Long">Training</div>
                                     <div class="Project-Subtitle">The More The Better ❚█══█❚</div>
@@ -200,7 +198,8 @@
                         <div class="Project-Card "
                             style="will-change: transform; transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
                             <div class="Project-Image" data-tilt>
-                                <div class="Image-Gradient"></div><img class="Project-Image" src="../static/libs/modelimg/mcts.png"
+                                <div class="Image-Gradient"></div><img class="Project-Image"
+                                    src="{{ url_for('static', filename='libs/modelimg/mcts.png') }}"
                                     alt="monte carlo tree search">
                                 <div class="Project-Texts Project-Text-Right">
                                     <div class="Project-Name Name-Long">Monte Carlo Tree Search</div>
@@ -221,8 +220,8 @@
                         <div class="Project-Card "
                             style="will-change: transform; transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
                             <div class="Project-Image" data-tilt>
-                                <div class="Image-Gradient"></div><img class="Project-Image" src="../static/libs/modelimg/play.png"
-                                    alt="Bot hand">
+                                <div class="Image-Gradient"></div><img class="Project-Image"
+                                    src="{{ url_for('static', filename='libs/modelimg/play.png') }}" alt="Bot hand">
                                 <div class="Project-Texts Project-Text-Left">
                                     <div class="Project-Name Name-Long">Evaluation</div>
                                     <div class="Project-Subtitle">Conclusion of the model</div>
@@ -240,12 +239,13 @@
                     </div>
                 </div>
                 <div class="Projects-List">
-                
+
                     <div class="Project-Wrapper Card-Right">
                         <div class="Project-Card "
                             style="will-change: transform; transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
                             <div class="Project-Image" data-tilt>
-                                <div class="Image-Gradient"></div><img class="Project-Image" src="../static/libs/modelimg/potential.jpg"
+                                <div class="Image-Gradient"></div><img class="Project-Image"
+                                    src="{{ url_for('static', filename='libs/modelimg/potential.jpg') }}"
                                     alt="AI picture">
                                 <div class="Project-Texts Project-Text-Right">
                                     <div class="Project-Name Name-Long">Conclusion</div>
@@ -267,7 +267,8 @@
         </div>
     </div>
     </div>
-    <script type="text/javascript" src="../static/contact.js"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='bootstrap.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='vanilla-tilt.js') }}"></script>
     <script type="text/javascript">
         VanillaTilt.init(document.querySelectorAll(".Project-Image"), {
             max: 25,
@@ -280,7 +281,7 @@
             "glare-prerender": false,
         });
     </script>
-    
+
 </body>
 
 </html>

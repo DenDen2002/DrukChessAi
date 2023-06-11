@@ -1,12 +1,6 @@
 chess
 Flask
-jax
-Jinja
-keras
-numpy
 python-chess
-scipy
-six
 tensorboard
 tensorboard-data-server
 tensorflow
